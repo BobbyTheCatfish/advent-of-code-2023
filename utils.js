@@ -1,5 +1,8 @@
 // @ts-check
 
+const fs = require("fs");
+const path = require("path");
+
 function timer (func) {
     const start = performance.now()
     const result = func();
@@ -20,6 +23,10 @@ const u = {
     /** @param {Array} arr */
     unique: (arr) => {
         return [...new Set(arr)]
+    },
+    /** @param {string} p */
+    readFile: (p) => {
+        return fs.readFileSync(path.resolve(__dirname, p)).toString();
     }
 }
 

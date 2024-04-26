@@ -1,6 +1,5 @@
 // @ts-check
 const u = require('../utils');
-const input = require("../inputs/day1.json")
 /**
  * Gets the first and last digit and returns that as a number
  * @param {string} input 
@@ -32,12 +31,14 @@ function includeText(input) {
 
 // part 1
 u.time(() => {
+    const input = u.readFile("./inputs/day1.txt").split("\n")
     const results = input.map(i => calibrateConvert(i))
     return results.reduce((p, c) => p + c, 0);
 })
 
 // part 2
 u.time(() => {
+    const input = u.readFile("./inputs/day1.txt").split("\n")
     const results = input.map(i => includeText(i))
     return results.reduce((p, c) => p + c, 0);
 })
